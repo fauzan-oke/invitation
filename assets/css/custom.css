@@ -1,20 +1,22 @@
-/* Custom Styles & Micro-Animations for Wedding Invitation */
+/* Custom Styles & Micro-Animations for Wedding Invitation - White & Blue Elegance */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Alex+Brush&display=swap');
 
 :root {
-  --primary-gold: #C5A880;
-  --dark-gold: #A07844;
-  --soft-gold: #F4ECE1;
-  --bg-creamy: #FAF8F5;
-  --bg-card: #FFFFFF;
-  --text-primary: #2C2825;
-  --text-secondary: #6E6862;
+  --primary-blue: #2563EB;
+  --dark-blue: #1E3A8A;
+  --royal-blue: #1D4ED8;
+  --soft-blue: #EFF6FF;
+  --ice-blue: #F0F6FA;
+  --bg-white: #FFFFFF;
+  --bg-ice: #F8FAFD;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
 }
 
 html {
   scroll-behavior: smooth;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  background-color: var(--bg-creamy);
+  background-color: var(--bg-ice);
   color: var(--text-primary);
 }
 
@@ -32,27 +34,29 @@ html {
 
 /* Glassmorphism & Card styling */
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(197, 168, 128, 0.25);
+  border: 1px solid rgba(59, 130, 246, 0.2);
 }
 
 .glass-card-dark {
-  background: rgba(30, 28, 26, 0.8);
+  background: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(197, 168, 128, 0.2);
+  border: 1px solid rgba(147, 197, 253, 0.25);
 }
 
-.gold-gradient-text {
-  background: linear-gradient(135deg, #B3874B 0%, #E6CA9A 50%, #A0753E 100%);
+.blue-gradient-text {
+  background: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 50%, #60A5FA 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.gold-border-gradient {
-  border-image: linear-gradient(to bottom right, #B3874B, #E6CA9A, #A0753E) 1;
+.blue-gradient-text-light {
+  background: linear-gradient(135deg, #93C5FD 0%, #E0EDFB 50%, #60A5FA 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* Music Disc Spin Animation */
@@ -103,9 +107,9 @@ html {
   animation: pulse-subtle 4s ease-in-out infinite;
 }
 
-/* Floral motif overlay */
+/* Subtle snowflake / motif overlay */
 .bg-ornament {
-  background-image: radial-gradient(rgba(197, 168, 128, 0.12) 1px, transparent 0);
+  background-image: radial-gradient(rgba(59, 130, 246, 0.12) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
@@ -115,32 +119,32 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #F8FAFD;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #C5A880;
+  background: #93C5FD;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #A07844;
+  background: #2563EB;
 }
 
 /* Section Divider */
-.gold-divider {
+.blue-divider {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
 }
 
-.gold-divider::before,
-.gold-divider::after {
+.blue-divider::before,
+.blue-divider::after {
   content: '';
   height: 1px;
   width: 60px;
-  background: linear-gradient(90deg, transparent, #C5A880, transparent);
+  background: linear-gradient(90deg, transparent, #3B82F6, transparent);
 }
 
 /* Fade in on scroll transition helper */

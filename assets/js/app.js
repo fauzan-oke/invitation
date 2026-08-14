@@ -1,4 +1,4 @@
-// Interactive Logic for Hani & Fauzan Wedding Invitation
+// Interactive Logic for Hani & Fauzan Wedding Invitation - White & Blue Theme
 document.addEventListener('DOMContentLoaded', () => {
   initGuestName();
   initCountdown();
@@ -42,10 +42,9 @@ function initMusicPlayer() {
   let isPlaying = false;
 
   // Sound URL: Romantic royalty-free acoustic wedding piano
-  // Using an ambient royalty-free romantic track fallback
   if (bgAudio) {
-    bgAudio.src = 'piano-midnight.mp3';
-    bgAudio.volume = 0.9;
+    bgAudio.src = 'https://assets.mixkit.co/music/preview/mixkit-romantic-moment-127.mp3';
+    bgAudio.volume = 0.6;
   }
 
   function playAudio() {
@@ -109,7 +108,6 @@ function initMusicPlayer() {
 
 // 3. Countdown Timer (Target: 31 Agustus 2026 08:00:00 WIB)
 function initCountdown() {
-  // Target: August 31, 2026 08:00:00 GMT+7
   const weddingDate = new Date("2026-08-31T08:00:00+07:00").getTime();
 
   const daysEl = document.getElementById('count-days');
@@ -185,30 +183,30 @@ function initRSVP() {
     storedWishes.forEach(item => {
       const isHadir = item.status === 'hadir';
       const statusBadge = isHadir
-        ? `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">
-             <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+        ? `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 border border-blue-200">
+             <svg class="w-3 h-3 mr-1 text-blue-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
              Hadir
            </span>`
-        : `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200">
+        : `<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-600 border border-slate-200">
              <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
              Berhalangan
            </span>`;
 
       const card = document.createElement('div');
-      card.className = "p-4 rounded-xl bg-stone-50/80 border border-stone-200/60 shadow-sm transition hover:shadow-md";
+      card.className = "p-4 rounded-xl bg-white border border-blue-100 shadow-sm transition hover:shadow-md";
       card.innerHTML = `
         <div class="flex items-center justify-between gap-2 mb-1.5">
           <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-full bg-[#C5A880]/20 text-[#A07844] font-semibold flex items-center justify-center text-xs">
+            <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 font-semibold flex items-center justify-center text-xs">
               ${escapeHtml(item.name.charAt(0).toUpperCase())}
             </div>
-            <h4 class="font-semibold text-stone-800 text-sm md:text-base">${escapeHtml(item.name)}</h4>
+            <h4 class="font-semibold text-slate-800 text-sm md:text-base">${escapeHtml(item.name)}</h4>
           </div>
           ${statusBadge}
         </div>
-        <p class="text-stone-600 text-sm leading-relaxed mt-2 pl-10">${escapeHtml(item.message)}</p>
+        <p class="text-slate-600 text-sm leading-relaxed mt-2 pl-10">${escapeHtml(item.message)}</p>
         <div class="text-right mt-1.5">
-          <span class="text-[11px] text-stone-400 font-light">${escapeHtml(item.time || 'Baru saja')}</span>
+          <span class="text-[11px] text-slate-400 font-light">${escapeHtml(item.time || 'Baru saja')}</span>
         </div>
       `;
       wishesList.appendChild(card);
@@ -262,14 +260,14 @@ function initClipboard() {
           // Visual feedback on button
           const originalText = btn.innerHTML;
           btn.innerHTML = `
-            <svg class="w-4 h-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <span class="text-emerald-700 font-medium">Tersalin!</span>
+            <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <span class="text-blue-700 font-medium">Tersalin!</span>
           `;
-          btn.classList.add('bg-emerald-50', 'border-emerald-300');
+          btn.classList.add('bg-blue-50', 'border-blue-300');
 
           setTimeout(() => {
             btn.innerHTML = originalText;
-            btn.classList.remove('bg-emerald-50', 'border-emerald-300');
+            btn.classList.remove('bg-blue-50', 'border-blue-300');
           }, 2000);
         }).catch(err => {
           showToast("Gagal menyalin rekening. Silakan salin secara manual.", "error");
@@ -356,12 +354,12 @@ function showToast(message, type = "success") {
   toast.id = 'app-toast';
   toast.className = `fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-5 py-3 rounded-full shadow-2xl text-sm font-medium transition-all duration-300 flex items-center gap-2.5 ${
     type === 'success' 
-      ? 'bg-stone-900 text-amber-300 border border-amber-400/40' 
+      ? 'bg-slate-900 text-blue-200 border border-blue-500/40' 
       : 'bg-red-900 text-white border border-red-400/40'
   }`;
 
   const icon = type === 'success'
-    ? `<svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`
+    ? `<svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>`
     : `<svg class="w-4 h-4 text-red-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
 
   toast.innerHTML = `${icon} <span>${escapeHtml(message)}</span>`;
