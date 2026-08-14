@@ -1,4 +1,4 @@
-# Web Undangan Pernikahan Simpel & Elegan: Hani & Fauzan
+
 
 Website undangan pernikahan digital modern, minimalis, dan elegan yang dibangun menggunakan **Tailwind CSS**, **Google Fonts**, dan **Lucide Icons**.
 
