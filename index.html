@@ -9,6 +9,7 @@
   <meta name="description" content="Undangan Pernikahan Online Hani Nur Azizah & Fauzan Fakhri - Senin, 31 Agustus 2026 di Bekasi.">
   <meta property="og:title" content="The Wedding of Hani & Fauzan">
   <meta property="og:description" content="Senin, 31 Agustus 2026 di KUA Bekasi Utara & Hotel Horison Ultima Bekasi.">
+  <meta property="og:image" content="assets/images/childhood-strip.jpg">
   <meta property="og:type" content="website">
 
   <!-- Tailwind CSS CDN -->
@@ -23,6 +24,8 @@
               dark: '#142850',
               soft: '#EEF4FF',
               ice: '#F4F8FD',
+              ribbon: '#C82333',
+              softRed: '#FFF1F2',
               pink: '#FF6B8B',
               lightPink: '#FFE8EC',
             }
@@ -51,33 +54,40 @@
 
   <!-- ==================== FLOATING MUSIC WIDGET ==================== -->
   <div id="music-toggle" class="fixed bottom-6 right-6 z-40 hidden cursor-pointer group">
-    <div class="relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border-2 border-doodle-blue text-doodle-blue shadow-xl backdrop-blur transition transform hover:scale-110">
+    <div class="relative flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-white border-2 border-doodle-ribbon text-doodle-ribbon shadow-xl backdrop-blur transition transform hover:scale-110">
       <!-- Vinyl Disc Graphic -->
-      <div id="music-disc" class="absolute inset-1 rounded-full border border-doodle-blue/40 border-dashed spin-slow flex items-center justify-center">
-        <div class="w-2.5 h-2.5 rounded-full bg-doodle-blue"></div>
+      <div id="music-disc" class="absolute inset-1 rounded-full border border-doodle-ribbon/40 border-dashed spin-slow flex items-center justify-center">
+        <div class="w-2.5 h-2.5 rounded-full bg-doodle-ribbon"></div>
       </div>
       <!-- Icon SVG inside -->
-      <svg id="music-icon" class="w-5 h-5 relative z-10 text-doodle-blue" fill="currentColor" viewBox="0 0 24 24">
+      <svg id="music-icon" class="w-5 h-5 relative z-10 text-doodle-ribbon" fill="currentColor" viewBox="0 0 24 24">
         <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
       </svg>
     </div>
   </div>
 
   <!-- ==================== COVER GATE OVERLAY ==================== -->
-  <section id="cover-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-white text-slate-800 transition-all duration-1000 overflow-hidden p-4 sm:p-6">
+  <section id="cover-overlay" class="fixed inset-0 z-50 flex items-center justify-center bg-white/95 backdrop-blur-md text-slate-800 transition-all duration-1000 overflow-y-auto p-4 sm:p-6">
     
-    <!-- Outer Loopy Doodle Card Wrapper on Cover -->
-    <div class="relative max-w-md w-full bg-white p-6 sm:p-8 rounded-[36px] border-4 border-doodle-blue shadow-2xl text-center flex flex-col items-center justify-center animate-float">
+    <!-- Outer Card Wrapper with Ribbon Doodle Motif -->
+    <div class="relative max-w-md w-full bg-white p-6 sm:p-8 rounded-[36px] border-4 border-doodle-blue shadow-2xl text-center flex flex-col items-center justify-center animate-float my-auto">
       
-      <!-- Hand Drawn Pink Heart Accent -->
-      <div class="pink-heart-badge mb-3 animate-heartbeat">
-        <svg class="w-12 h-12 text-doodle-pink" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
-        </svg>
-        <span class="absolute font-marker font-bold text-doodle-blue text-sm">31</span>
+      <!-- Top Ribbon Bow Icon -->
+      <div class="mb-2 text-doodle-ribbon flex items-center justify-center gap-1">
+        <span class="text-2xl">🎀</span>
       </div>
 
-      <p class="font-marker font-semibold text-sm tracking-wide text-slate-500 mb-1">
+      <!-- Couple Mini Avatar Thumbnails -->
+      <div class="flex items-center justify-center -space-x-3 mb-3">
+        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-doodle-pink shadow-md bg-[#FCE7F3] p-0.5 transform -rotate-6">
+          <img src="assets/images/hani-avatar.png" alt="Hani" class="w-full h-full object-cover">
+        </div>
+        <div class="w-16 h-16 rounded-full overflow-hidden border-2 border-doodle-blue shadow-md bg-[#DBEAFE] p-0.5 transform rotate-6">
+          <img src="assets/images/fauzan-avatar.png" alt="Fauzan" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <p class="font-marker font-bold text-xs uppercase tracking-widest text-doodle-ribbon mb-1">
         THE WEDDING OF
       </p>
 
@@ -86,7 +96,7 @@
         Hani &amp; Fauzan
       </h1>
 
-      <p class="font-doodle text-base text-slate-600 mb-6">
+      <p class="font-doodle text-base text-slate-600 mb-5">
         Senin, 31 Agustus 2026
       </p>
 
@@ -100,18 +110,18 @@
         </h3>
         <span id="guest-badge" class="inline-block mt-1 px-3 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-doodle-blue hidden"></span>
         <p class="text-xs text-slate-400 italic mt-1 font-sans">
-          *Buka undangan untuk melihat rangkaian acara
+          *Sentuh tombol di bawah untuk membuka undangan
         </p>
       </div>
 
       <!-- Open Button -->
       <button id="btn-open-invitation" 
-              class="group relative inline-flex items-center gap-2.5 px-8 py-3 rounded-full bg-doodle-blue text-white font-marker font-bold text-lg shadow-lg shadow-doodle-blue/30 transition-all duration-300 hover:bg-blue-700 hover:scale-105 active:scale-95">
+              class="group relative inline-flex items-center gap-2.5 px-8 py-3 rounded-full bg-gradient-to-r from-doodle-ribbon to-red-600 text-white font-marker font-bold text-lg shadow-lg shadow-red-500/30 transition-all duration-300 hover:bg-red-700 hover:scale-105 active:scale-95">
         <i data-lucide="mail-open" class="w-5 h-5 transition-transform group-hover:rotate-12"></i>
         <span>Buka Undangan</span>
       </button>
 
-      <!-- Loopy Doodle Border SVG Accent -->
+      <!-- Bottom Location Info -->
       <div class="mt-4 text-xs text-slate-400 font-sans">
         KUA Bekasi Utara &bull; Hotel Horison Ultima Bekasi
       </div>
@@ -121,10 +131,10 @@
   <!-- ==================== MAIN INVITATION CONTENT ==================== -->
   <main class="w-full max-w-3xl mx-auto bg-white shadow-2xl min-h-screen relative border-x-4 border-doodle-blue my-0 sm:my-6 sm:rounded-[36px] overflow-hidden">
 
-    <!-- HERO / INVITATION CARD (MATCHING USER REFERENCE IMAGE) -->
+    <!-- HERO / INVITATION CARD (MATCHING USER REFERENCE DESIGN) -->
     <section class="relative bg-white p-6 sm:p-12 text-center overflow-hidden">
       
-      <!-- Continuous Blue Curly Loop Border Wrapper (SVG Frame) -->
+      <!-- Continuous Blue Curly Loop Border Wrapper -->
       <div class="relative w-full border-4 border-doodle-blue rounded-[32px] p-6 sm:p-10 bg-white shadow-sm">
         
         <!-- Top Quote -->
@@ -132,7 +142,7 @@
           Pada akhirnya, dua hati yang saling menemukan memilih untuk berjalan pulang—bersama.
         </p>
 
-        <p class="font-doodle text-slate-600 text-base sm:text-lg leading-relaxed max-w-lg mx-auto mb-10 reveal-on-scroll">
+        <p class="font-doodle text-slate-600 text-base sm:text-lg leading-relaxed max-w-lg mx-auto mb-8 reveal-on-scroll">
           Dengan penuh rasa syukur dan bahagia, kami mengundang kamu untuk menjadi saksi dari awal perjalanan kami:
         </p>
 
@@ -187,7 +197,7 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-10 max-w-lg mx-auto mt-8 pt-6 border-t-2 border-dashed border-doodle-blue/30 reveal-on-scroll">
           
           <!-- AKAD -->
-          <div class="flex flex-col items-center text-center p-3 rounded-2xl bg-doodle-soft/50">
+          <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-doodle-soft/60 border border-blue-100">
             <h4 class="font-marker font-bold text-2xl text-doodle-blue mb-1">Akad</h4>
             <p class="font-doodle text-slate-700 text-lg font-semibold">Pukul 14:00 WIB</p>
             <p class="font-marker text-xl font-bold text-doodle-blue mt-1">KUA Bekasi Utara</p>
@@ -199,7 +209,7 @@
           </div>
 
           <!-- RESEPSI -->
-          <div class="flex flex-col items-center text-center p-3 rounded-2xl bg-doodle-soft/50">
+          <div class="flex flex-col items-center text-center p-4 rounded-2xl bg-doodle-soft/60 border border-blue-100">
             <h4 class="font-marker font-bold text-2xl text-doodle-blue mb-1">Resepsi</h4>
             <p class="font-doodle text-slate-700 text-lg font-semibold">Pukul 15:00 WIB</p>
             <p class="font-marker text-xl font-bold text-doodle-blue mt-1">Hotel Horison Ultima Bekasi</p>
@@ -212,6 +222,85 @@
 
         </div>
 
+      </div>
+    </section>
+
+
+    <!-- ILLUSTRATED AVATARS SECTION (BRIDE & GROOM) -->
+    <section class="py-12 px-6 sm:px-10 bg-doodle-soft/50 border-t-2 border-b-2 border-doodle-blue/20">
+      <div class="text-center max-w-md mx-auto mb-10 reveal-on-scroll">
+        <p class="font-marker font-bold text-xs uppercase tracking-widest text-doodle-ribbon mb-1">Mempelai Bahagia</p>
+        <h3 class="font-marker text-3xl font-bold text-slate-900 mb-2">The Bride &amp; Groom</h3>
+        <p class="font-doodle text-slate-600 text-base">Maha Suci Allah yang telah menyatukan dua insan dalam ikatan cinta</p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
+        
+        <!-- BRIDE: HANI -->
+        <div class="avatar-card p-6 rounded-3xl bg-white border-3 border-pink-300 shadow-md flex flex-col items-center text-center reveal-on-scroll">
+          <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-pink-200 shadow-md bg-[#FCE7F3] mb-4">
+            <img src="assets/images/hani-avatar.png" alt="Hani Nur Azizah" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-marker text-3xl font-bold text-doodle-blue">Hani Nur Azizah</h4>
+          <p class="text-doodle-pink font-marker text-base font-bold my-0.5">Mempelai Wanita</p>
+          <div class="text-slate-600 text-sm mt-2 space-y-0.5 font-doodle text-base">
+            <p>Putri ke-2 dari:</p>
+            <p class="font-bold text-slate-800">Bapak Muhibin (Alm)</p>
+            <p class="font-bold text-slate-800">&amp; Ibu Munjayadah</p>
+          </div>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+             class="mt-4 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-sans font-semibold bg-pink-50 text-pink-700 hover:bg-pink-100 transition">
+            <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+            <span>@haninurazizah</span>
+          </a>
+        </div>
+
+        <!-- GROOM: FAUZAN -->
+        <div class="avatar-card p-6 rounded-3xl bg-white border-3 border-blue-300 shadow-md flex flex-col items-center text-center reveal-on-scroll">
+          <div class="w-40 h-40 rounded-full overflow-hidden border-4 border-blue-200 shadow-md bg-[#DBEAFE] mb-4">
+            <img src="assets/images/fauzan-avatar.png" alt="Fauzan Fakhri" class="w-full h-full object-cover">
+          </div>
+          <h4 class="font-marker text-3xl font-bold text-doodle-blue">Fauzan Fakhri</h4>
+          <p class="text-doodle-blue font-marker text-base font-bold my-0.5">Mempelai Pria</p>
+          <div class="text-slate-600 text-sm mt-2 space-y-0.5 font-doodle text-base">
+            <p>Putra ke-4 dari:</p>
+            <p class="font-bold text-slate-800">Bapak Sukamto (Alm)</p>
+            <p class="font-bold text-slate-800">&amp; Ibu Cosy Tuti Nazar</p>
+          </div>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+             class="mt-4 inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-sans font-semibold bg-blue-50 text-blue-700 hover:bg-blue-100 transition">
+            <i data-lucide="instagram" class="w-3.5 h-3.5"></i>
+            <span>@fauzanfakhri</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- SPECIAL MEMORIES / CHILDHOOD PHOTOSTRIP SECTION -->
+    <section class="py-14 px-6 sm:px-10 bg-white relative overflow-hidden">
+      <div class="text-center max-w-md mx-auto mb-8 reveal-on-scroll">
+        <span class="text-2xl">🎀</span>
+        <p class="font-marker font-bold text-xs uppercase tracking-widest text-doodle-ribbon mt-1 mb-1">Our Journey</p>
+        <h3 class="font-marker text-3xl sm:text-4xl font-bold text-slate-900 mb-2">Kenangan Masa Kecil</h3>
+        <p class="font-doodle text-slate-600 text-base">
+          "Dari mimpi masa kecil hingga melangkah bersama menuju babak baru kehidupan."
+        </p>
+      </div>
+
+      <!-- Photostrip Display Card -->
+      <div class="max-w-sm mx-auto p-4 rounded-3xl bg-[#FAF9F6] border-3 border-doodle-ribbon/80 shadow-xl reveal-on-scroll relative group cursor-pointer">
+        <div class="overflow-hidden rounded-2xl shadow-inner bg-white">
+          <img src="assets/images/childhood-strip.jpg" 
+               alt="Kenangan Masa Kecil Hani & Fauzan" 
+               class="gallery-item w-full h-auto object-cover transition duration-500 group-hover:scale-105"
+               data-full="assets/images/childhood-strip.jpg">
+        </div>
+        <div class="text-center pt-3 pb-1">
+          <p class="font-marker font-bold text-lg text-doodle-ribbon">Hani &amp; Fauzan &bull; 31.08.2026</p>
+          <p class="text-xs text-slate-400 font-sans">*Sentuh foto untuk memperbesar</p>
+        </div>
       </div>
     </section>
 
@@ -403,7 +492,7 @@
         </p>
       </div>
 
-      <!-- Bank Transfer Cards (Blue Doodle Theme) -->
+      <!-- Bank Transfer Cards (Blue & Ribbon Accents) -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto reveal-on-scroll">
         
         <!-- BANK CARD 1 - BCA FAUZAN -->
@@ -457,6 +546,7 @@
     <!-- CLOSING & FOOTER -->
     <footer class="py-12 px-6 text-center bg-white border-t-2 border-doodle-blue/20">
       <div class="max-w-md mx-auto reveal-on-scroll">
+        <span class="text-2xl mb-2 inline-block">🎀</span>
         <p class="font-doodle text-slate-600 text-base mb-4 leading-relaxed">
           Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Anda berkenan hadir dan memberikan doa restu.
         </p>

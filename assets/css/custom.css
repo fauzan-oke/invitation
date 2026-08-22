@@ -1,10 +1,11 @@
-/* Custom Styles & Handwritten Doodle Aesthetic - Hani & Fauzan */
+/* Custom Styles & Handwritten Doodle Aesthetic - Hani & Fauzan with Illustrated Avatars & Ribbon Theme */
 @import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Mali:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Caveat:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Fredoka:wght@400;500;600&display=swap');
 
 :root {
   --primary-blue: #234FE3;
   --royal-blue: #1D4ED8;
-  --deep-blue: #142850;
+  --ribbon-red: #C82333;
+  --soft-red: #FFF1F2;
   --soft-blue: #EEF4FF;
   --accent-pink: #FF6B8B;
   --light-pink: #FFE8EC;
@@ -17,7 +18,7 @@
 html {
   scroll-behavior: smooth;
   font-family: 'Patrick Hand', 'Mali', cursive, sans-serif;
-  background-color: #F0F4FA;
+  background-color: #F1F5F9;
   color: var(--text-dark);
 }
 
@@ -47,25 +48,25 @@ html {
 
 /* Loopy Doodle Border Effect */
 .loopy-border {
-  border: 3px solid #234FE3;
+  border: 3.5px solid #234FE3;
   border-radius: 32px;
   position: relative;
 }
 
-/* Decorative Blue Ink Headings */
-.doodle-title {
-  color: #234FE3;
-  letter-spacing: 0.02em;
+/* Ribbon Red Border */
+.ribbon-border {
+  border: 3px solid #C82333;
+  border-radius: 28px;
+  position: relative;
 }
 
-/* Hand-drawn Pink Heart Icon Badge */
-.pink-heart-badge {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 54px;
-  height: 54px;
+/* Avatar Card Bounce on Hover */
+.avatar-card {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.4s ease;
+}
+
+.avatar-card:hover {
+  transform: translateY(-6px) scale(1.02);
 }
 
 /* Music Disc Spin Animation */
@@ -100,13 +101,27 @@ html {
   animation: float 4s ease-in-out infinite;
 }
 
+/* Floating gentle for doodle items */
+@keyframes float-subtle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(-1deg);
+  }
+}
+
+.animate-float-subtle {
+  animation: float-subtle 3s ease-in-out infinite;
+}
+
 /* Heartbeat animation */
 @keyframes heartbeat {
   0%, 100% {
     transform: scale(1);
   }
   25% {
-    transform: scale(1.1);
+    transform: scale(1.12);
   }
   40% {
     transform: scale(1);
@@ -120,25 +135,13 @@ html {
   animation: heartbeat 2s ease-in-out infinite;
 }
 
-/* Wavy / scalloped frame background SVG */
-.doodle-frame-wrapper {
-  position: relative;
-  padding: 24px;
-}
-
-@media (min-width: 640px) {
-  .doodle-frame-wrapper {
-    padding: 36px;
-  }
-}
-
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #F0F4FA;
+  background: #F1F5F9;
 }
 
 ::-webkit-scrollbar-thumb {
