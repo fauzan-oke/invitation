@@ -1,0 +1,49 @@
+[
+  {
+    "id": "tamu-kehormatan",
+    "slug": "tamu",
+    "name": "Tamu Undangan",
+    "greeting": "Kepada Yth. Bapak/Ibu/Saudara/i",
+    "category": "Umum"
+  },
+  {
+    "id": "budi-santoso",
+    "slug": "budi-santoso",
+    "name": "Bapak Budi Santoso & Keluarga",
+    "greeting": "Kepada Yth. Bapak/Ibu/Saudara/i",
+    "category": "Keluarga Besar",
+    "note": "Tempat Duduk: Meja VIP 01"
+  },
+  {
+    "id": "farhan-dinda",
+    "slug": "farhan-dinda",
+    "name": "Farhan & Dinda",
+    "greeting": "Kepada Sahabat Tercinta",
+    "category": "Sahabat",
+    "note": "Tempat Duduk: Meja B-04"
+  },
+  {
+    "id": "rizky-ramadhan",
+    "slug": "rizky-ramadhan",
+    "name": "Rizky Ramadhan, S.T.",
+    "greeting": "Kepada Yth. Rekan",
+    "category": "Rekan Kerja",
+    "note": "Tempat Duduk: Meja C-02"
+  },
+  {
+    "id": "keluarga-haji-ahmad",
+    "slug": "keluarga-haji-ahmad",
+    "name": "Keluarga Besar Bpk. H. Ahmad",
+    "greeting": "Kepada Yth. Bapak/Ibu",
+    "category": "Keluarga",
+    "note": "Tempat Duduk: Meja VIP 02"
+  },
+  {
+    "id": "alumni-sma",
+    "slug": "alumni-sma",
+    "name": "Teman-Teman Alumni SMA 1 Bekasi",
+    "greeting": "Kepada Sahabat",
+    "category": "Alumni",
+    "note": "Tempat Duduk: Meja D-01"
+  }
+]

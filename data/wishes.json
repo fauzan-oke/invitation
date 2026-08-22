@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1787385707052,
+    "name": "Sarah & Andre",
+    "status": "hadir",
+    "guests": "2",
+    "message": "Selamat menempuh hidup baru Hani & Fauzan! Semoga bahagia selalu.",
+    "createdAt": "2026-08-22T08:01:47.052Z",
+    "timeFormatted": "Baru saja"
+  },
+  {
+    "id": 1,
+    "name": "Farhan & Dinda",
+    "status": "hadir",
+    "guests": "2",
+    "message": "Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khoir. Selamat menempuh hidup baru Hani & Fauzan! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.",
+    "createdAt": "2026-08-22T10:15:00.000Z",
+    "timeFormatted": "10 menit yang lalu"
+  },
+  {
+    "id": 2,
+    "name": "Rizky Ramadhan",
+    "status": "hadir",
+    "guests": "1",
+    "message": "Selamat brader Fauzan & Hani! Lancar sampai hari H yaa. Sampai bertemu di Hotel Horison Bekasi!",
+    "createdAt": "2026-08-22T09:45:00.000Z",
+    "timeFormatted": "25 menit yang lalu"
+  },
+  {
+    "id": 3,
+    "name": "Keluarga Besar Bpk. Ahmad",
+    "status": "hadir",
+    "guests": "3",
+    "message": "Selamat berbahagia untuk kedua mempelai. Semoga dilancarkan semua rangkaian acaranya dari akad di KUA Bekasi Utara hingga resepsi di Horison. Aamiin.",
+    "createdAt": "2026-08-22T08:30:00.000Z",
+    "timeFormatted": "1 jam yang lalu"
+  }
+]
