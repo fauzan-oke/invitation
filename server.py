@@ -83,7 +83,7 @@ class WeddingHandler(http.server.SimpleHTTPRequestHandler):
                 self.end_headers()
                 response = {
                     "success": True,
-                    "message": "Doa & RSVP berhasil disimpan ke file wishes.json",
+                    "message": "Doa & RSVP berhasil disimpan",
                     "data": new_entry,
                     "allWishes": wishes
                 }
