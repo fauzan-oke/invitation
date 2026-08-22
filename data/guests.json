@@ -13,5 +13,29 @@
     "greeting": "Kepada Yth. Bapak/Ibu/Saudara/i",
     "category": "Keluarga Besar",
     "note": ""
+  },
+  {
+    "id": "naufal-nawwaf",
+    "slug": "naufal-nawwaf",
+    "name": "Naufal Nawwaf",
+    "greeting": "Kepada Yth. Bapak/Ibu/Saudara/i",
+    "category": "Keluarga Besar",
+    "note": ""
+  },
+  {
+    "id": "juan-setiawan",
+    "slug": "juan-setiawan",
+    "name": "Juan Setiawan & Keluarga",
+    "greeting": "Kepada Yth. Bapak/Ibu/Saudara/i",
+    "category": "Keluarga Besar",
+    "note": ""
+  },
+  {
+    "id": "karim",
+    "slug": "karim",
+    "name": "Om Karim & Keluarga Besar",
+    "greeting": "Kepada Yth. Bapak/Ibu/Saudara/i",
+    "category": "Keluarga Besar",
+    "note": ""
   }
 ]
