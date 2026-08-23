@@ -45,5 +45,21 @@
     "greeting": "Kepada Yth. Bapak/Ibu/Saudara/i",
     "category": "Keluarga Besar",
     "note": ""
+  },
+  {
+    "id": "tommy-ika",
+    "slug": "tommy-ika",
+    "name": "Mas Tommy dan Teh Ika beserta Keluarga",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+   {
+    "id": "tengku-wahyudi",
+    "slug": "tengku-wahyudi",
+    "name": "Abang Yudhi dan Kak Randu beserta Keluarga",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
   }
 ]
