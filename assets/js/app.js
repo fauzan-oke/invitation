@@ -1,4 +1,13 @@
-// Interactive Logic for Hani Nur Azizah & Fauzan Fakhri Wedding Invitation
+// =============================================================================
+// KONFIGURASI LAGU UNDANGAN PERNIKAHAN (HANI & FAUZAN)
+// =============================================================================
+// Anda dapat mengganti lagu dengan 2 cara mudah:
+// 1. (File Lokal): Simpan file MP3 Anda di folder "assets/audio/song.mp3"
+// 2. (Link Online): Masukkan URL MP3 langsung ke variabel AUDIO_SOURCE di bawah ini
+// =============================================================================
+const AUDIO_SOURCE = 'assets/audio/song.mp3'; 
+const FALLBACK_ONLINE_AUDIO = 'https://assets.mixkit.co/music/preview/mixkit-romantic-moment-127.mp3';
+
 document.addEventListener('DOMContentLoaded', () => {
   initGuestName();
   initCountdown();
@@ -23,7 +32,6 @@ async function initGuestName() {
   const guestBadgeEl = document.getElementById('guest-badge');
   const rsvpNameInput = document.getElementById('rsvp-name');
 
-  // Try fetching guests list from JSON file or API
   try {
     const res = await fetch('data/guests.json');
     if (res.ok) {
@@ -41,7 +49,6 @@ async function initGuestName() {
   const cleanSlug = rawParam.toLowerCase().trim().replace(/[\s_]+/g, '-');
   const cleanNameText = decodeURIComponent(rawParam.replace(/\+/g, ' ')).trim();
 
-  // Search in loaded guests.json
   const matchedGuest = registeredGuests.find(g => 
     (g.slug && g.slug.toLowerCase() === cleanSlug) ||
     (g.id && g.id.toLowerCase() === cleanSlug) ||
@@ -82,8 +89,16 @@ function initMusicPlayer() {
   let isPlaying = false;
 
   if (bgAudio) {
-    bgAudio.src = 'https://assets.mixkit.co/music/preview/mixkit-romantic-moment-127.mp3';
+    // Set audio source with automatic fallback to online music if local file is missing
+    bgAudio.src = AUDIO_SOURCE;
     bgAudio.volume = 0.6;
+
+    bgAudio.addEventListener('error', () => {
+      console.log("File lagu lokal tidak ditemukan, beralih ke lagu online bawaan.");
+      if (bgAudio.src !== FALLBACK_ONLINE_AUDIO) {
+        bgAudio.src = FALLBACK_ONLINE_AUDIO;
+      }
+    });
   }
 
   function playAudio() {
@@ -204,7 +219,6 @@ const DEFAULT_WISHES = [
 ];
 
 async function loadWishes() {
-  // First try from server / JSON file
   try {
     const res = await fetch('/api/wishes');
     if (res.ok) {
@@ -214,12 +228,10 @@ async function loadWishes() {
       return;
     }
   } catch (e) {
-    // try direct data/wishes.json static
     try {
       const resStatic = await fetch('data/wishes.json');
       if (resStatic.ok) {
         allWishes = await resStatic.json();
-        // merge with local storage new entries
         const localWishes = JSON.parse(localStorage.getItem('hani_fauzan_wishes')) || [];
         if (localWishes.length > allWishes.length) {
           allWishes = localWishes;
@@ -230,7 +242,6 @@ async function loadWishes() {
     } catch (err) {}
   }
 
-  // Fallback to LocalStorage or Defaults
   allWishes = JSON.parse(localStorage.getItem('hani_fauzan_wishes')) || DEFAULT_WISHES;
   renderWishes();
 }
@@ -312,7 +323,6 @@ function initRSVP() {
         submitBtn.innerHTML = `<span>Menyimpan ke data JSON...</span>`;
       }
 
-      // Try sending to backend API to write to data/wishes.json
       let savedViaServer = false;
       try {
         const response = await fetch('/api/rsvp', {
@@ -495,7 +505,6 @@ function showToast(message, type = "success") {
   }, 3500);
 }
 
-// Helper: Escape HTML to avoid XSS
 function escapeHtml(string) {
   const div = document.createElement('div');
   div.textContent = string;
