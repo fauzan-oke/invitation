@@ -190,7 +190,7 @@ function initCountdown() {
 const DEFAULT_WISHES = [
   {
     id: 1,
-    name: "Farhan & Dinda",
+    name: "The World",
     status: "hadir",
     guests: "2",
     message: "Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khoir. Selamat menempuh hidup baru Hani & Fauzan! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.",
