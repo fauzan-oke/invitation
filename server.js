@@ -1,4 +1,5 @@
 const http = require('http');
+const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
@@ -6,6 +7,7 @@ const PORT = process.env.PORT || 3000;
 const PUBLIC_DIR = __dirname;
 const WISHES_FILE = path.join(__dirname, 'data', 'wishes.json');
 const GUESTS_FILE = path.join(__dirname, 'data', 'guests.json');
+const N8N_WEBHOOK_URL = 'https://prod.n8n-roku.my.id/webhook/0914cda3-733d-45a7-a134-ca7e39b39c01';
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -19,6 +21,37 @@ const MIME_TYPES = {
   '.ico': 'image/x-icon',
   '.mp3': 'audio/mpeg'
 };
+
+function forwardToN8n(payload) {
+  try {
+    const dataString = JSON.stringify(payload);
+    const url = new URL(N8N_WEBHOOK_URL);
+    const options = {
+      hostname: url.hostname,
+      port: 443,
+      path: url.pathname,
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(dataString)
+      },
+      timeout: 5000
+    };
+
+    const req = https.request(options, (res) => {
+      console.log(`[n8n Webhook] Forwarded successfully, response status: ${res.statusCode}`);
+    });
+
+    req.on('error', (err) => {
+      console.warn(`[n8n Webhook Warning] Forward failed: ${err.message}`);
+    });
+
+    req.write(dataString);
+    req.end();
+  } catch (err) {
+    console.warn(`[n8n Webhook Error]: ${err.message}`);
+  }
+}
 
 const server = http.createServer((req, res) => {
   // Enable CORS
@@ -63,7 +96,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // API: Submit RSVP & Save to wishes.json
+  // API: Submit RSVP & Save to wishes.json & forward to n8n
   if (req.method === 'POST' && (pathname === '/api/rsvp' || pathname === '/api/wishes')) {
     let body = '';
     req.on('data', chunk => { body += chunk.toString(); });
@@ -87,19 +120,28 @@ const server = http.createServer((req, res) => {
           id: Date.now(),
           name: newEntry.name,
           status: newEntry.status || 'hadir',
-          guests: newEntry.guests || '1',
+          guests: parseInt(newEntry.guests, 10) || 1,
           message: newEntry.message,
           createdAt: new Date().toISOString(),
-          timeFormatted: 'Baru saja'
+          timeFormatted: 'Baru saja',
+          source: 'wedding_invitation_hani_fauzan'
         };
 
         currentWishes.unshift(preparedEntry);
 
-        // Write back to file data/wishes.json
+        // Write to local file data/wishes.json
         fs.writeFileSync(WISHES_FILE, JSON.stringify(currentWishes, null, 2), 'utf8');
 
+        // Forward to n8n webhook asynchronously
+        forwardToN8n(preparedEntry);
+
         res.writeHead(200, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ success: true, message: 'Doa & RSVP berhasil disimpan ke file wishes.json', data: preparedEntry, allWishes: currentWishes }));
+        res.end(JSON.stringify({ 
+          success: true, 
+          message: 'Doa & RSVP berhasil disimpan dan terkirim ke n8n webhook!', 
+          data: preparedEntry, 
+          allWishes: currentWishes 
+        }));
       } catch (error) {
         console.error('RSVP Save Error:', error);
         res.writeHead(500, { 'Content-Type': 'application/json' });
@@ -133,7 +175,7 @@ server.listen(PORT, () => {
   console.log(`====================================================`);
   console.log(`🎉 Web Undangan Hani & Fauzan aktif!`);
   console.log(`🌐 Buka di browser: http://localhost:${PORT}`);
+  console.log(`🔗 n8n Webhook: ${N8N_WEBHOOK_URL}`);
   console.log(`📁 File wishes disimpan di: ${WISHES_FILE}`);
-  console.log(`📁 File guests disimpan di: ${GUESTS_FILE}`);
   console.log(`====================================================`);
 });

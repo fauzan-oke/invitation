@@ -1,10 +1,7 @@
 // =============================================================================
-// KONFIGURASI LAGU UNDANGAN PERNIKAHAN (HANI & FAUZAN)
+// KONFIGURASI WEBHOOK & AUDIO UNDANGAN PERNIKAHAN (HANI & FAUZAN)
 // =============================================================================
-// Anda dapat mengganti lagu dengan 2 cara mudah:
-// 1. (File Lokal): Simpan file MP3 Anda di folder "assets/audio/song.mp3"
-// 2. (Link Online): Masukkan URL MP3 langsung ke variabel AUDIO_SOURCE di bawah ini
-// =============================================================================
+const N8N_WEBHOOK_URL = 'https://prod.n8n-roku.my.id/webhook/0914cda3-733d-45a7-a134-ca7e39b39c01';
 const AUDIO_SOURCE = 'assets/audio/song.mp3'; 
 const FALLBACK_ONLINE_AUDIO = 'https://assets.mixkit.co/music/preview/mixkit-romantic-moment-127.mp3';
 
@@ -89,7 +86,6 @@ function initMusicPlayer() {
   let isPlaying = false;
 
   if (bgAudio) {
-    // Set audio source with automatic fallback to online music if local file is missing
     bgAudio.src = AUDIO_SOURCE;
     bgAudio.volume = 0.6;
 
@@ -190,7 +186,7 @@ function initCountdown() {
   setInterval(updateCountdown, 1000);
 }
 
-// 4. RSVP and Guestbook (Insert & Save to JSON / API & LocalStorage)
+// 4. RSVP and Guestbook (Sends to n8n Webhook API & Saves to JSON / LocalStorage)
 const DEFAULT_WISHES = [
   {
     id: 1,
@@ -199,22 +195,6 @@ const DEFAULT_WISHES = [
     guests: "2",
     message: "Barakallahu lakuma wa baraka 'alaikuma wa jama'a bainakuma fii khoir. Selamat menempuh hidup baru Hani & Fauzan! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.",
     timeFormatted: "10 menit yang lalu"
-  },
-  {
-    id: 2,
-    name: "Rizky Ramadhan",
-    status: "hadir",
-    guests: "1",
-    message: "Selamat brader Fauzan & Hani! Lancar sampai hari H yaa. Sampai bertemu di Hotel Horison Bekasi!",
-    timeFormatted: "25 menit yang lalu"
-  },
-  {
-    id: 3,
-    name: "Keluarga Besar Bpk. Ahmad",
-    status: "hadir",
-    guests: "3",
-    message: "Selamat berbahagia untuk kedua mempelai. Semoga dilancarkan semua rangkaian acaranya dari akad di KUA Bekasi Utara hingga resepsi di Horison. Aamiin.",
-    timeFormatted: "1 jam yang lalu"
   }
 ];
 
@@ -308,27 +288,45 @@ function initRSVP() {
         return;
       }
 
-      const newWish = {
+      const payload = {
         id: Date.now(),
         name,
         status,
-        guests,
+        guests: parseInt(guests, 10) || 1,
         message,
         createdAt: new Date().toISOString(),
-        timeFormatted: "Baru saja"
+        timeFormatted: "Baru saja",
+        source: "wedding_invitation_hani_fauzan"
       };
 
       if (submitBtn) {
         submitBtn.disabled = true;
-        submitBtn.innerHTML = `<span>Menyimpan ke data JSON...</span>`;
+        submitBtn.innerHTML = `<span>Mengirim &amp; Menyimpan RSVP...</span>`;
       }
 
+      // 1. Send POST to n8n Webhook
+      try {
+        await fetch(N8N_WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload)
+        }).catch(err => {
+          // If direct browser CORS is restricted, server proxy also forwards it
+          console.warn("Direct n8n webhook post notice:", err);
+        });
+      } catch (webhookErr) {
+        console.warn("Webhook fetch execution notice:", webhookErr);
+      }
+
+      // 2. Also send to local backend to save in data/wishes.json
       let savedViaServer = false;
       try {
         const response = await fetch('/api/rsvp', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(newWish)
+          body: JSON.stringify(payload)
         });
         if (response.ok) {
           const result = await response.json();
@@ -336,15 +334,15 @@ function initRSVP() {
           if (result.allWishes) {
             allWishes = result.allWishes;
           } else {
-            allWishes.unshift(newWish);
+            allWishes.unshift(payload);
           }
         }
       } catch (err) {
-        console.log("Server API not reachable, saving to local state & storage:", err);
+        console.log("Local server notice, updating local storage & state:", err);
       }
 
       if (!savedViaServer) {
-        allWishes.unshift(newWish);
+        allWishes.unshift(payload);
       }
 
       localStorage.setItem('hani_fauzan_wishes', JSON.stringify(allWishes));
@@ -359,7 +357,7 @@ function initRSVP() {
         `;
       }
 
-      showToast("🎉 Terima kasih! Doa & RSVP berhasil tersimpan ke file JSON!", "success");
+      showToast("🎉 Terima kasih! Konfirmasi RSVP & Doa berhasil terkirim ke Webhook!", "success");
     });
   }
 }

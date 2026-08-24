@@ -61,5 +61,29 @@
     "greeting": "Kepada Yth.",
     "category": "",
     "note": ""
+  },
+  {
+    "id": "queen-media",
+    "slug": "queen-media",
+    "name": "Queen Media",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+   {
+    "id": "there",
+    "slug": "there",
+    "name": "There Sang Petualang",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+   {
+    "id": "monster-sharen",
+    "slug": "monster-sharen",
+    "name": "Mba Sharen dan Mas Haryo",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
   }
 ]
