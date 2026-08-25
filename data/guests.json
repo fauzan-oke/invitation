@@ -109,5 +109,21 @@
     "greeting": "Kepada Yth.",
     "category": "",
     "note": ""
+  },
+   {
+    "id": "mba-buah",
+    "slug": "mba-buah",
+    "name": "Chery Novita Sari",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "manajer-nurul",
+    "slug": "manajer-nurul",
+    "name": "Nurul Miskiyah dan Keluarga",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
   }
 ]
