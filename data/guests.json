@@ -103,10 +103,10 @@
     "note": ""
   },
   {
-    "id": "sike",
-    "slug": "sike",
-    "name": "Sike (Istrinya Riyan)",
-    "greeting": "Kepada Yth.",
+    "id": "mba-galak",
+    "slug": "mba-galak",
+    "name": "Intan Mulyanita",
+    "greeting": "Kepada Yth. Ibu",
     "category": "",
     "note": ""
   },
@@ -147,6 +147,38 @@
     "slug": "pak-bandot",
     "name": "Bandot Sumardiyono",
     "greeting": "Kepada Yth. Bapak",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "ceo-yang-menyamar",
+    "slug": "ceo-yang-menyamar",
+    "name": "Lindawati",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "mba-baik",
+    "slug": "mba-baik",
+    "name": "Tiara Shinta Yunika Hani",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "mba-bijak",
+    "slug": "mba-bijak",
+    "name": "Gina Satriyani",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "el-el",
+    "slug": "el-el",
+    "name": "Khusnul Khotimah",
+    "greeting": "Kepada Yth. Ibu",
     "category": "",
     "note": ""
   }
