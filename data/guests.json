@@ -125,5 +125,29 @@
     "greeting": "Kepada Yth.",
     "category": "",
     "note": ""
+  },
+   {
+    "id": "om-karim",
+    "slug": "om-karim",
+    "name": "Om Karim",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "obos",
+    "slug": "obos",
+    "name": "Muhammad Zahrudin",
+    "greeting": "Kepada Yth. Bapak",
+    "category": "",
+    "note": ""
+  },
+{
+    "id": "pak-bandot",
+    "slug": "pak-bandot",
+    "name": "Bandot Sumardiyono",
+    "greeting": "Kepada Yth. Bapak",
+    "category": "",
+    "note": ""
   }
 ]
