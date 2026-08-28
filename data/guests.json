@@ -261,5 +261,13 @@
     "greeting": "Kepada Yth. Ibu",
     "category": "",
     "note": ""
+  },
+  {
+    "id": "mng",
+    "slug": "mng",
+    "name": "Muhammad Naufal Gusti",
+    "greeting": "Kepada Yth. ",
+    "category": "",
+    "note": ""
   }
 ]
