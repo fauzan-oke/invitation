@@ -189,5 +189,69 @@
     "greeting": "Kepada Yth. Bapak/Ibu",
     "category": "",
     "note": ""
+  },
+   {
+    "id": "tante-basrida",
+    "slug": "tante-basrida",
+    "name": "Tante Basrida",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+{
+    "id": "ibu-upi",
+    "slug": "ibu-upi",
+    "name": "Ibu Upi",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+ {
+    "id": "ongga-buyung",
+    "slug": "ongga-buyung",
+    "name": "Ongga Buyung",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "mas-ijun",
+    "slug": "mas-ijun",
+    "name": "Mas Ijun",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+    {
+    "id": "mba-iin",
+    "slug": "mba-iin",
+    "name": "Mba Iin",
+    "greeting": "Kepada Yth.",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "intan",
+    "slug": "intan",
+    "name": "Intan",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "marsha",
+    "slug": "marsha",
+    "name": "Marsha",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "trisna-a",
+    "slug": "trisna-a",
+    "name": "Trisna A",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
   }
 ]
