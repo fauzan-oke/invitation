@@ -269,5 +269,53 @@
     "greeting": "Kepada Yth. ",
     "category": "",
     "note": ""
+  },
+  {
+    "id": "bu-katim",
+    "slug": "bu-katim",
+    "name": "Mailan Adri Ani",
+    "greeting": "Kepada Yth. Mba",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "nino",
+    "slug": "nino",
+    "name": "Nino Maryono",
+    "greeting": "Kepada Yth. Mas",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "husein",
+    "slug": "husein",
+    "name": "Muhammad Husein",
+    "greeting": "Kepada Yth. Mas",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "afif",
+    "slug": "afif",
+    "name": "Afif Faturohman Putra",
+    "greeting": "Kepada Yth. Mas",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "bu-warih",
+    "slug": "bu-warih",
+    "name": "Warih Prihati",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "tim-dmasn",
+    "slug": "tim-dmasn",
+    "name": "Tim DMASN",
+    "greeting": "Kepada Yth. Bapak/Ibu",
+    "category": "",
+    "note": ""
   }
 ]
