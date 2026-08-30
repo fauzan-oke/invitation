@@ -317,5 +317,61 @@
     "greeting": "Kepada Yth. Bapak/Ibu",
     "category": "",
     "note": ""
+  },
+    {
+    "id": "bu-kapus",
+    "slug": "bu-kapus",
+    "name": "Suminarsih",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "bu-karo",
+    "slug": "bu-karo",
+    "name": "Poppy Alia",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "bu-ifta",
+    "slug": "bu-ifta",
+    "name": "Ifta Wydyaningsih",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "pak-rus",
+    "slug": "pak-rus",
+    "name": "Rusyandi",
+    "greeting": "Kepada Yth. Bapak",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "bu-umi",
+    "slug": "bu-umi",
+    "name": "Umi Nihayah",
+    "greeting": "Kepada Yth. Ibu",
+    "category": "",
+    "note": ""
+  },
+  {
+    "id": "tim-kepegawaian",
+    "slug": "tim-kepegawaian",
+    "name": "Kepegawaian",
+    "greeting": "Kepada Yth. Bapak/Ibu",
+    "category": "",
+    "note": ""
+  },
+   {
+    "id": "cpns-2024",
+    "slug": "cpns-2024",
+    "name": "CPNS 2024",
+    "greeting": "Kepada Yth. Bapak/Ibu/Teman",
+    "category": "",
+    "note": ""
   }
 ]
